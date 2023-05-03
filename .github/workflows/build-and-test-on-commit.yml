@@ -1,3 +1,7 @@
+defaults: 
+    run: 
+        working-directory: /home/runner/work/ics
+
 name: Build and Test on Commit
 
 on: [push]

@@ -10,6 +10,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '17'
+      - name: d
+        run: ls
       - name: Build without tests
         run: mvn package -DskipTests
       - name: Build and test

@@ -1,7 +1,9 @@
 name: Package and Publish on Release
+
 on:
   release:
     types: [created]
+
 jobs:
   package-and-publish:
     runs-on: ubuntu-latest
@@ -18,7 +20,6 @@ jobs:
         run: mvn package
       - name: Publish package
         uses: actions/upload-artifact@v3.1.2
-        #version 2??
         with:
-          name: ics
-          path: ics/target/ics-1.0.jar
+          name: ics-${{ github.sha }}
+          path: target/ics.jar

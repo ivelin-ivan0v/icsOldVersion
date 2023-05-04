@@ -23,3 +23,5 @@ jobs:
         with:
           name: ics-${{ github.sha }}
           path: target/ics.jar
+      - name: docker build
+        run: docker build --build-arg ics/src -f ics/Dockerfile .

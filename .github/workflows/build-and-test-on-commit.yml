@@ -18,4 +18,4 @@ jobs:
       - name: Build and test
         run: mvn package
       - name: docker build
-        run: docker build --build-arg ics/src -f ics/Dockerfile .
+        run: docker build --build-arg ics/src -f ics/Dockerfile -t docker_ivo .

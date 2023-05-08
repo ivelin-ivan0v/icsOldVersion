@@ -18,10 +18,3 @@ jobs:
         run: mvn package -DskipTests
       - name: Build and test
         run: mvn package
-      - name: Publish package
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: ics-${{ github.sha }}
-          path: target/ics.jar
-      - name: docker build
-        run: docker build --build-arg ics/src -f ics/Dockerfile .

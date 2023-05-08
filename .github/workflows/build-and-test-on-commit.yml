@@ -14,8 +14,8 @@ jobs:
           java-version: '17'
       
       - name: Build without tests
-        run: mvn package -DskipTests
+        run: ./gradlew clean bootJar
       - name: Build and test
-        run: mvn package
-      - name: docker build
-        run: docker build --build-arg ics/src -f Dockerfile -t docker_ivo .
+        run: ./gradlew clean assemble test
+      - name: Static code analysis
+        run: ./gradle clean checkstyleMain
